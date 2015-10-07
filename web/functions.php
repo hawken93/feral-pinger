@@ -21,23 +21,33 @@ function preprocess($name) {
     return $name;
 }
 
-function draw_server($name, $stats) {
+function draw_server($name, $stats, $dumb=false) {
     $name = preprocess($name);
     $tag = "";
+    $text = "";
 
     if($stats === null){
-        $tag  = "class=\"box borderedbox\"";
-        $text = "";
+        if($dumb) {
+            $tag  = "class=\"box borderedtinybox\"";
+        } else {
+            $tag  = "class=\"box borderedbox\"";
+        }
     } else {
-        $tag  = "class=\"box smallbox\" ";
+
+
+        if(!$dumb) {
+            $tag  = "class=\"box smallbox\" ";
+            $sent = intval($stats['tx']);
+            $received = intval($stats['rx']);
+            $loss = 100 - $received*100./$sent;
+            $min = $stats['min'];
+            $avg = $stats['avg'];
+            $max = $stats['max'];
+            $text = "<br />$loss%/$min/$avg/$max";
+        } else {
+            $tag  = "class=\"box tinybox\" ";
+        }
         $tag .= ' style="background-color: '.gradient(intval($stats['loss'])).'"';
-        $sent = intval($stats['tx']);
-        $received = intval($stats['rx']);
-        $loss = 100 - $received*100./$sent;
-        $min = $stats['min'];
-        $avg = $stats['avg'];
-        $max = $stats['max'];
-        $text = "<br />$loss%/$min/$avg/$max";
     }
 
     echo "\t<div $tag>$name$text</div>\n";

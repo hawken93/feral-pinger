@@ -17,6 +17,8 @@ require_once 'functions.php';
 
 extract(parse_read_file($config['cur_file']));
 
+$dumb = isset($_REQUEST['dumb']) ? $_REQUEST['dumb'] == true : false;
+
 ?>
 <!doctype html>
 <html><head>
@@ -34,7 +36,11 @@ echo "\t<div class=\"box borderedbox\"><b>Start</b>: ".$start."</div>\n";
 echo "\t<div class=\"box borderedbox\"><b>Stop</b>: ".$stop."</div>\n";
 echo "</div>\n";
 foreach($tags as $rack=>$info){
-    echo "<div class=\"bigbox\">\n";
+    if($dumb) {
+        echo "<div class=\"bigthinbox\">\n";
+    } else {
+        echo "<div class=\"bigbox\">\n";
+    }
     echo "\t<div>$rack</div>\n";
     foreach($info as $srv){
         if(isset($servers[$srv])) {
@@ -43,15 +49,19 @@ foreach($tags as $rack=>$info){
         } else
             $stats = null;
 
-        draw_server($srv, $stats);
+        draw_server($srv, $stats, $dumb);
     }
     echo "</div>\n";
 }
 if(count($servers)) {
-    echo "<div class=\"bigbox\">\n";
+    if($dumb) {
+        echo "<div class=\"bigthinbox\">\n";
+    } else {
+        echo "<div class=\"bigbox\">\n";
+    }
     echo "\t<div>Other</div>\n";
     foreach($servers as $srv=>$stats) {
-        draw_server($srv, $stats);
+        draw_server($srv, $stats, $dumb);
     }
     echo "</div>\n";
 }

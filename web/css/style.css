@@ -13,46 +13,73 @@
 
 html, body, .container
 {
-	height: 100%; 
-	min-height: 100%;
-	font-family: Sans-Serif;
+    height: 100%;
+    min-height: 100%;
+    font-family: Sans-Serif;
 }
 
 .bigbox {
-	float: left;
-	width: 420px;
-	height: 250px;
-	background-color: #eee;
-	text-align: center;
-	padding: 10px;
-	margin: 5px;
-	border-radius: 5px;
+    float: left;
+    width: 420px;
+    height: 260px;
+    background-color: #eee;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+/* For space efficiency in dumb mode :D */
+.bigthinbox {
+    float: left;
+    width: 195px;
+    height: 260px;
+    background-color: #eee;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 .box {
-	float: left;
-	padding: 2px;
-	margin: 1px;
-	border-radius: 5px;
+    float: left;
+    padding: 2px;
+    margin: 1px;
+    border-radius: 5px;
 }
 
+/* Passive entries with detail */
 .borderedbox {
-	border: 1px solid #888;
-	width: 198px;
-	height: 36px;
+    border: 1px solid #888;
+    width: 198px;
+    height: 36px;
+}
+
+/* Passive entries without detailed info */
+.borderedtinybox {
+    border: 1px solid #888;
+    width: 188px;
+    height: 16px;
 }
 
 .highbox {
-	height: 80px;
+    height: 80px;
 }
 
+/* For active entries with detailed info */
 .smallbox {
-	width: 200px;
-	height: 40px;
+    width: 200px;
+    height: 40px;
+}
+
+/* For active entries without extra info */
+.tinybox {
+    width: 190px;
+    height: 18px;
 }
 
 table,td,tr {
-	border: 1px solid #888888;
-	border-collapse: collapse;
-	padding: 2px;
+    border: 1px solid #888888;
+    border-collapse: collapse;
+    padding: 2px;
 }
