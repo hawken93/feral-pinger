@@ -27,14 +27,25 @@ $dumb = isset($_REQUEST['dumb']) ? $_REQUEST['dumb'] == true : false;
 </head>
 <body>
 <?php
-echo "<div class=\"bigbox\">\n";
-echo "\t<div class=\"box borderedbox highbox\"><b>Legend</b><br />Server name<br />loss%/min/avg/max<br/>(latency in ms)</div>\n";
-echo "\t<div class=\"box borderedbox\"><b>Location</b><br />".$config['location']."</div>\n";
-echo "\t<div class=\"box borderedbox\"><b>Route</b><br />".$config['route']."</div>\n";
-echo "\t<div class=\"box borderedbox\"><b>ISP</b><br />".$config['ISP']."</div>\n";
-echo "\t<div class=\"box borderedbox\"><b>Start</b>: ".$start."</div>\n";
-echo "\t<div class=\"box borderedbox\"><b>Stop</b>: ".$stop."</div>\n";
-echo "</div>\n";
+if($dumb) {
+    echo "<div class=\"bigthinbox\">\n";
+    echo "\t<div class=\"box borderedtinybox\"><b>Legend</b>: Server name</div>\n";
+    echo "\t<div class=\"box borderedtinybox\"><b>Location</b>: ".$config['location']."</div>\n";
+    echo "\t<div class=\"box borderedtinybox\"><b>Route</b>: ".$config['route']."</div>\n";
+    echo "\t<div class=\"box borderedtinybox\"><b>ISP</b>: ".$config['ISP']."</div>\n";
+    echo "\t<div class=\"box borderedtinybox\" style=\"height: 35px\"><b>Start</b>: ".$start."</div>\n";
+    echo "\t<div class=\"box borderedtinybox\" style=\"height: 35px\"><b>Stop</b>: ".$stop."</div>\n";
+    echo "</div>\n";
+} else {
+    echo "<div class=\"bigbox\">\n";
+    echo "\t<div class=\"box borderedbox highbox\"><b>Legend</b><br />Server name<br />loss%/min/avg/max<br/>(latency in ms)</div>\n";
+    echo "\t<div class=\"box borderedbox\"><b>Location</b><br />".$config['location']."</div>\n";
+    echo "\t<div class=\"box borderedbox\"><b>Route</b><br />".$config['route']."</div>\n";
+    echo "\t<div class=\"box borderedbox\"><b>ISP</b><br />".$config['ISP']."</div>\n";
+    echo "\t<div class=\"box borderedbox\"><b>Start</b>: ".$start."</div>\n";
+    echo "\t<div class=\"box borderedbox\"><b>Stop</b>: ".$stop."</div>\n";
+    echo "</div>\n";
+}
 foreach($tags as $rack=>$info){
     if($dumb) {
         echo "<div class=\"bigthinbox\">\n";
