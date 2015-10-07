@@ -1,0 +1,45 @@
+html, body, .container
+{
+	height: 100%; 
+	min-height: 100%;
+	font-family: Sans-Serif;
+}
+
+.bigbox {
+	float: left;
+	width: 420px;
+	height: 250px;
+	background-color: #eee;
+	text-align: center;
+	padding: 10px;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+.box {
+	float: left;
+	padding: 2px;
+	margin: 1px;
+	border-radius: 5px;
+}
+
+.borderedbox {
+	border: 1px solid #888;
+	width: 198px;
+	height: 36px;
+}
+
+.highbox {
+	height: 80px;
+}
+
+.smallbox {
+	width: 200px;
+	height: 40px;
+}
+
+table,td,tr {
+	border: 1px solid #888888;
+	border-collapse: collapse;
+	padding: 2px;
+}

@@ -1,0 +1,10 @@
+#!/bin/sh
+FILE=/web/path/example.status
+
+export SERVERS="$(php getservers.php)"
+
+date > status.new
+((fping $SERVERS -c 100 -p 500 -i 5 -q) 2>&1) >> status.new
+date >> status.new
+
+mv status.new "$FILE"
