@@ -12,11 +12,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# Just to make sure you can launch it from anywhere you like
+cd /offline/path
+
 FILE=/web/path/example.status
 
 export SERVERS="$(php getservers.php)"
 
 date > status.new
+# See the fping manpage to tweak these. Encouraged to make it finish within one minute
 ((fping $SERVERS -c 100 -p 500 -i 5 -q) 2>&1) >> status.new
 date >> status.new
 

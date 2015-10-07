@@ -1,10 +1,9 @@
 # Pinger script from https://thehawken.org/fs
 
-
 ## Setup
 This system runs with some files in a web directory and some files outside of the web directory. You will find web/config.php.inc which has to be configured and renamed to config.php. After this, you will find offline/getservers.php and offline/fs. Both have to be configured to reflect what you decided in config.php. Afterwards, the fs script has to be added to your crontab:
 ```
-*/5 *     * * * www-data    bash /path/to/fs
+*/5 *     * * * www-data    bash /offline/path/fs
 ```
 This will make it run every 5 minutes.
 If it doesn't work, I'm 90% sure you can blame file permissions. Make sure the user used by your webserver matches crontab, and make sure example.status is writable and accessible.
