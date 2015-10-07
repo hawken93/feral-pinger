@@ -16,6 +16,7 @@
 cd /offline/path
 
 FILE=/web/path/example.status
+LOCK=/web/path/example.lock
 
 export SERVERS="$(php getservers.php)"
 
@@ -24,4 +25,6 @@ date > status.new
 ((fping $SERVERS -c 100 -p 500 -i 5 -q) 2>&1) >> status.new
 date >> status.new
 
+touch "$LOCK"
 mv status.new "$FILE"
+rm "$LOCK"

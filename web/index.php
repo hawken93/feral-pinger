@@ -15,7 +15,7 @@
 require_once 'config.php';
 require_once 'functions.php';
 
-extract(parse_read_file($config['cur_file']));
+extract(parse_read_file($config['cur_file'], $config['lock_file']));
 
 $dumb = isset($_REQUEST['dumb']) ? $_REQUEST['dumb'] == true : false;
 

@@ -88,8 +88,10 @@ function gradient($perc){
 }
 
 // read.. and.. parse.. the file..!
-function parse_read_file($fname) {
+function parse_read_file($fname, $lname) {
     $ret = array();
+    while(file_exists($lname))
+        sleep(1);
     $lines = explode("\n",trim(file_get_contents($fname),"\n"));
     $ret['start']   = array_shift($lines);
     $ret['stop']    = array_pop($lines);

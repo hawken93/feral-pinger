@@ -19,6 +19,8 @@ $config = array(
 
     // File of the ping statistics
     'cur_file' => '/web/path/example.status',
+    // Lock file
+    'lock_file' => '/web/path/example.lock',
 
 
     'location' => 'City?',
