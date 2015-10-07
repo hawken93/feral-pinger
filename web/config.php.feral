@@ -1,0 +1,154 @@
+<?php
+/* This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>. */
+
+$config = array(
+    // $1 of this function (.*?) is used to fetch the human readable server name,
+    // as well as filtering the pingable servers from the other infrastructure
+    'shorten_regex' => '/^(.*?)\.feralhosting\.com$/',
+
+    // File of the ping statistics
+    'cur_file' => '/web/path/feral.status',
+
+
+    'location' => 'City?',
+    'route' => 'cogent/amsix/whatever',
+    'ISP' => 'Service Provider AS',
+    // Yes, it's you!
+    'responsible_person' => '',
+);
+
+$tags = array(
+    "FR/OVH-RBX5/S45/F11" => array(
+        "maroon.feralhosting.com",
+    ),
+    "R01B01" => array(
+        "gaia.feralhosting.com",
+        "hypnos.feralhosting.com",
+        "morpheus.feralhosting.com",
+        "nesoi.feralhosting.com",
+        "helios.feralhosting.com",
+        "eurynome.feralhosting.com",
+        "theia.feralhosting.com",
+        "eurybia.feralhosting.com"
+    ),
+    "R01B02" => array(
+        "chapterhouse.feralhosting.com",
+        "asteria.feralhosting.com",
+        "nyx.feralhosting.com",
+        "uranus.feralhosting.com",
+        "hemera.feralhosting.com",
+        "ourea.feralhosting.com",
+        "eos.feralhosting.com",
+        "coeus.feralhosting.com",
+        "crius.feralhosting.com"
+    ),
+    "R01B03" => array(
+        "moo-moo-moo",
+        "chirp-chirp-chirp",
+        "hoot-hoot-hoot",
+        "quack-quack-quack",
+        "bzzz-bzzz-bzzz",
+        "miaow-miaow-miaow",
+    ),
+    "R01B04" => array(
+        "pontus.feralhosting.com",
+        "iapetus.feralhosting.com",
+        "thanatos.feralhosting.com",
+        "tartarus.feralhosting.com",
+        "atlas.feralhosting.com",
+        "astraeus.feralhosting.com",
+        "themis.feralhosting.com",
+        "aura.feralhosting.com"
+    ),
+    "R01B05" => array(
+        "leto.feralhosting.com",
+        "asia.feralhosting.com",
+        "metis.feralhosting.com",
+        "ophion.feralhosting.com",
+        "pallas.feralhosting.com",
+        "perses.feralhosting.com",
+        "prometheus.feralhosting.com",
+        "selene.feralhosting.com"
+    ),
+    "R01B06" => array(
+        "lion.feralhosting.com",
+        "nemesis.feralhosting.com",
+        "mimas.feralhosting.com",
+        "gration.feralhosting.com",
+        "lelantos.feralhosting.com",
+        "clytius.feralhosting.com",
+        "eurytus.feralhosting.com",
+        "hippolytus.feralhosting.com"
+    ),
+    "R02B01" => array(
+        "demeter.feralhosting.com",
+        "artemis.feralhosting.com",
+        "aphrodite.feralhosting.com",
+        "hermes.feralhosting.com",
+        "hera.feralhosting.com",
+        "athena.feralhosting.com",
+        "hades.feralhosting.com",
+        "hestia.feralhosting.com"
+    ),
+    "R02B02" => array(
+        "clymene.feralhosting.com",
+        "epimetheus.feralhosting.com",
+        "dione.feralhosting.com",
+        "aether.feralhosting.com",
+        "zeus.feralhosting.com",
+        "rhea.feralhosting.com",
+        "ananke.feralhosting.com"
+    ),
+    "R02B03" => array(
+        "gobble-gobble-gobble",
+        "junction.feralhosting.com",
+        "cronus.feralhosting.com",
+        "thalassa.feralhosting.com",
+        "hyperion.feralhosting.com",
+        "phanes.feralhosting.com",
+        "poseidon.feralhosting.com",
+        "apollo.feralhosting.com",
+        "dionysus.feralhosting.com",
+        "ares.feralhosting.com"
+    ),
+    "R02B04" => array(
+        "mnemosyne.feralhosting.com",
+        "oceanus.feralhosting.com",
+        "phoebe.feralhosting.com",
+        "tethys.feralhosting.com",
+        "chaos.feralhosting.com",
+        "chronos.feralhosting.com",
+        "erebus.feralhosting.com",
+        "eros.feralhosting.com"
+    ),
+    "R02B05" => array(
+        "styx.feralhosting.com",
+        "cottus.feralhosting.com",
+        "gyges.feralhosting.com",
+        "agrius.feralhosting.com",
+        "aloadae.feralhosting.com",
+        "otos.feralhosting.com",
+        "antaeus.feralhosting.com",
+    ),
+    "R02B06" => array(
+        "hephaestus.feralhosting.com",
+        "menoetius.feralhosting.com",
+        "alcyoneus.feralhosting.com",
+        "chthonius.feralhosting.com",
+        "enceladus.feralhosting.com",
+        "ephialtes.feralhosting.com",
+        "eurymedon.feralhosting.com",
+        "polybotes.feralhosting.com",
+    ),
+);
