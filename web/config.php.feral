@@ -28,7 +28,7 @@ $config = array(
     'responsible_person' => '',
 );
 
-/* Credits go to Feralhosting for this file */
+/* Credits go to Feralhosting for this information */
 $tags = array(
     "FR/OVH-RBX5/S45/F11" => array(
         "maroon.feralhosting.com",
@@ -152,4 +152,8 @@ $tags = array(
         "eurymedon.feralhosting.com",
         "polybotes.feralhosting.com",
     ),
+);
+
+$staticdns = array(
+	"miaow-miaow-miaow" => "185.21.216.129"
 );

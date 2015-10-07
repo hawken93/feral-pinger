@@ -54,9 +54,15 @@ foreach($tags as $rack=>$info){
     }
     echo "\t<div>$rack</div>\n";
     foreach($info as $srv){
-        if(isset($servers[$srv])) {
-            $stats = $servers[$srv];
-            unset($servers[$srv]);
+        if(isset($staticdns[$srv])) {
+            $lookup = $staticdns[$srv];
+        } else {
+            $lookup = $srv;
+        }
+
+        if(isset($servers[$lookup])) {
+            $stats = $servers[$lookup];
+            unset($servers[$lookup]);
         } else
             $stats = null;
 

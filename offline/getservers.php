@@ -19,9 +19,11 @@ require_once '/web/path/config.php';
 $out = array();
 foreach($tags as $rack) {
     foreach($rack as $server) {
-        if(!preg_match($config['shorten_regex'], $server))
-            continue;
-        $out[] = $server;
+        if(isset($staticdns[$server])) {
+            $out[] = $staticdns[$server];
+        } else if(preg_match($config['shorten_regex'], $server)) {
+            $out[] = $server;
+        }
     }
 }
 echo implode(" ", $out)."\n";
