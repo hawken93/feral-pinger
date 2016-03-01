@@ -14,6 +14,8 @@ If it doesn't work, I'm 90% sure you can blame file permissions. Make sure the u
 * fping
 * bash
 
+You might also need to mess with PHPs permissions in order to get it to read files outside of your web directory. Generally found in /etc/php5
+
 
 ## Files
 
