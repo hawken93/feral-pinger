@@ -36,6 +36,7 @@ if($short) {
     echo "\t<div class=\"box borderedtinybox\" style=\"height: 35px\"><b>Start</b>: ".$start."</div>\n";
     echo "\t<div class=\"box borderedtinybox\" style=\"height: 35px\"><b>Stop</b>: ".$stop."</div>\n";
     echo "\t<div class=\"box borderedtinybox\"><a href=\"?s=0\">More detailed</a></div>\n";
+    echo "\t<div class=\"box borderedtinybox\"><a href=\"https://github.com/hawken93/feral-pinger\">Github</a></div>\n";
     echo "</div>\n";
 } else {
     echo "<div class=\"bigbox\">\n";
@@ -46,6 +47,7 @@ if($short) {
     echo "\t<div class=\"box borderedbox\"><b>Start</b>: ".$start."</div>\n";
     echo "\t<div class=\"box borderedbox\"><b>Stop</b>: ".$stop."</div>\n";
     echo "\t<div class=\"box borderedbox\"><a href=\"?s=1\">Less detailed</a></div>\n";
+    echo "\t<div class=\"box borderedbox\">Source code on <a href=\"https://github.com/hawken93/feral-pinger\">Github</a></div>\n";
     echo "</div>\n";
 }
 foreach($tags as $rack=>$info){
