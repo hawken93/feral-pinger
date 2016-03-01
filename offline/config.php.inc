@@ -18,9 +18,9 @@ $config = array(
     'shorten_regex' => '/^(.*?)\.example\.com$/',
 
     // File of the ping statistics
-    'cur_file' => '/web/path/example.status',
+    'cur_file' => '/offline/path/pinger.status',
     // Lock file
-    'lock_file' => '/web/path/example.lock',
+    'lock_file' => '/offline/path/pinger.lock',
 
 
     'location' => 'City?',
@@ -41,4 +41,11 @@ $tags = array(
         'another.example.com',
         'another-switch',
     ),
+);
+
+$other = array(
+);
+
+$staticdns = array(
+    "hostname" => "ipv4"
 );

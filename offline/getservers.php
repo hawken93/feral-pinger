@@ -14,16 +14,26 @@
 
 
 // Run this outside of your web root for maximum security
-require_once '/web/path/config.php';
+require_once '/offline/path/config.php';
+
+function addit($server) {
+	global $out;
+	global $staticdns;
+	global $config;
+
+	if(isset($staticdns[$server])) {
+		$out[] = $staticdns[$server];
+	} else if(preg_match($config['shorten_regex'], $server)) {
+		$out[] = $server;
+	}
+}
 
 $out = array();
-foreach($tags as $rack) {
-    foreach($rack as $server) {
-        if(isset($staticdns[$server])) {
-            $out[] = $staticdns[$server];
-        } else if(preg_match($config['shorten_regex'], $server)) {
-            $out[] = $server;
-        }
-    }
-}
+foreach($tags as $rack)
+	foreach($rack as $server)
+		addit($server);
+foreach($other as $server)
+	addit($server);
+
+
 echo implode(" ", $out)."\n";

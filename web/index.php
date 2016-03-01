@@ -12,12 +12,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-require_once 'config.php';
+require_once '/offline/path/config.php';
 require_once 'functions.php';
 
 extract(parse_read_file($config['cur_file'], $config['lock_file']));
 
-$dumb = isset($_REQUEST['dumb']) ? $_REQUEST['dumb'] == true : false;
+$short = isset($_REQUEST['s']) ? $_REQUEST['s'] == true : false;
 
 ?>
 <!doctype html>
@@ -27,7 +27,7 @@ $dumb = isset($_REQUEST['dumb']) ? $_REQUEST['dumb'] == true : false;
 </head>
 <body>
 <?php
-if($dumb) {
+if($short) {
     echo "<div class=\"bigthinbox\">\n";
     echo "\t<div class=\"box borderedtinybox\"><b>Legend</b>: Server name</div>\n";
     echo "\t<div class=\"box borderedtinybox\"><b>Location</b>: ".$config['location']."</div>\n";
@@ -35,6 +35,7 @@ if($dumb) {
     echo "\t<div class=\"box borderedtinybox\"><b>ISP</b>: ".$config['ISP']."</div>\n";
     echo "\t<div class=\"box borderedtinybox\" style=\"height: 35px\"><b>Start</b>: ".$start."</div>\n";
     echo "\t<div class=\"box borderedtinybox\" style=\"height: 35px\"><b>Stop</b>: ".$stop."</div>\n";
+    echo "\t<div class=\"box borderedtinybox\"><a href=\"?s=0\">More detailed</a></div>\n";
     echo "</div>\n";
 } else {
     echo "<div class=\"bigbox\">\n";
@@ -44,10 +45,11 @@ if($dumb) {
     echo "\t<div class=\"box borderedbox\"><b>ISP</b><br />".$config['ISP']."</div>\n";
     echo "\t<div class=\"box borderedbox\"><b>Start</b>: ".$start."</div>\n";
     echo "\t<div class=\"box borderedbox\"><b>Stop</b>: ".$stop."</div>\n";
+    echo "\t<div class=\"box borderedbox\"><a href=\"?s=1\">Less detailed</a></div>\n";
     echo "</div>\n";
 }
 foreach($tags as $rack=>$info){
-    if($dumb) {
+    if($short) {
         echo "<div class=\"bigthinbox\">\n";
     } else {
         echo "<div class=\"bigbox\">\n";
@@ -66,19 +68,19 @@ foreach($tags as $rack=>$info){
         } else
             $stats = null;
 
-        draw_server($srv, $stats, $dumb);
+        draw_server($srv, $stats, $short);
     }
     echo "</div>\n";
 }
 if(count($servers)) {
-    if($dumb) {
+    if($short) {
         echo "<div class=\"bigthinbox\">\n";
     } else {
         echo "<div class=\"bigbox\">\n";
     }
     echo "\t<div>Other</div>\n";
     foreach($servers as $srv=>$stats) {
-        draw_server($srv, $stats, $dumb);
+        draw_server($srv, $stats, $short);
     }
     echo "</div>\n";
 }

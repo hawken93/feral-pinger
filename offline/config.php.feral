@@ -17,20 +17,18 @@ $config = array(
     // as well as filtering the pingable servers from the other infrastructure
     'shorten_regex' => '/^(.*?)\.feralhosting\.com$/',
 
-    // File of the ping statistics
-    'cur_file' => '/web/path/feral.status',
-    // Lock file
-    'lock_file' => '/web/path/feral.lock',
-
+    // File with the fping stats
+    'cur_file' => '/offline/path/pinger.status',
+    'lock_file' => '/offline/path/pinger.lock',
 
     'location' => 'City?',
     'route' => 'cogent/amsix/whatever',
     'ISP' => 'Service Provider AS',
-    // Yes, it's you!
+    // it's you!
     'responsible_person' => '',
 );
 
-/* Credits go to Feralhosting for this information */
+/* Information given by Feralhosting */
 $tags = array(
     "FR/OVH-RBX5/S45/F11" => array(
         "maroon.feralhosting.com",
@@ -94,6 +92,16 @@ $tags = array(
         "eurytus.feralhosting.com",
         "hippolytus.feralhosting.com"
     ),
+    "R01B07" => array(
+        "porphyrion.feralhosting.com",
+        "thoon.feralhosting.com",
+        "anax.feralhosting.com",
+        "antiphates.feralhosting.com",
+        "argus.feralhosting.com",
+        "cacus.feralhosting.com",
+        "arges.feralhosting.com",
+        "brontes.feralhosting.com"
+    ),
     "R02B01" => array(
         "demeter.feralhosting.com",
         "artemis.feralhosting.com",
@@ -154,8 +162,21 @@ $tags = array(
         "eurymedon.feralhosting.com",
         "polybotes.feralhosting.com",
     ),
+    "R02B07" => array(
+        "thoas.feralhosting.com",
+        "steropes.feralhosting.com",
+        "polyphemus.feralhosting.com",
+        "gegenees.feralhosting.com",
+        "geryon.feralhosting.com",
+        "briareus.feralhosting.com",
+        "aigaion.feralhosting.com",
+        "orion.feralhosting.com"
+    ),
+);
+
+$other = array(
 );
 
 $staticdns = array(
-	"miaow-miaow-miaow" => "185.21.216.129"
+    "miaow-miaow-miaow" => "185.21.216.129"
 );

@@ -15,8 +15,8 @@
 # Just to make sure you can launch it from anywhere you like
 cd /offline/path
 
-FILE=/web/path/example.status
-LOCK=/web/path/example.lock
+FILE=pinger.status
+LOCK=pinger.lock
 
 export SERVERS="$(php getservers.php)"
 
@@ -25,6 +25,10 @@ date > status.new
 ((fping $SERVERS -c 100 -p 500 -i 5 -q) 2>&1) >> status.new
 date >> status.new
 
+while test -e "$LOCK"; do
+	sleep 0.1
+done
+
 touch "$LOCK"
-mv status.new "$FILE"
+cp status.new "$FILE"
 rm "$LOCK"
